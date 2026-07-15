@@ -7,6 +7,13 @@ pool:
   vmImage: 'macOS-latest'
 
 steps:
+- task: JavaToolInstaller@0
+  displayName: 'Set JDK Version'
+  inputs:
+    versionSpec: '17' # Change to '11', '17', or '21' based on your Android Gradle Plugin requirements
+    jdkArchitectureOption: 'x64'
+    jdkSourceOption: 'PreInstalled' # Uses the agent's pre-installed JDK pools
+
 - task: Gradle@2
   inputs:
     workingDirectory: ''
