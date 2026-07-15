@@ -10,11 +10,11 @@ steps:
 - task: JavaToolInstaller@0
   displayName: 'Set JDK Version'
   inputs:
-    versionSpec: '21' # Change to '11', '17', or '21' based on your Android Gradle Plugin requirements
+    versionSpec: '11' # Change to '11', '17', or '21' based on your Android Gradle Plugin requirements
     jdkArchitectureOption: 'x64'
     jdkSourceOption: 'PreInstalled' # Uses the agent's pre-installed JDK pools
 
-- task: Gradle@2
+- task: Gradle@3
   inputs:
     workingDirectory: ''
     gradleWrapperFile: 'gradlew'
