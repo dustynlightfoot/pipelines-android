@@ -32,6 +32,20 @@ steps:
     targetFolder: '$(build.artifactStagingDirectory)'
   displayName: Copy .apk files to artifact staging directory
 
+- task: DownloadSecureFile@1
+  name: keystore_file
+  displayName: Download Keystore
+  inputs:
+    secureFile: 'myapp5.keystore'
+
+# - task: CopyFiles@2
+#   displayName: Copy Keystore
+#   inputs:
+#     SourceFolder: $(Agent.TempDirectory)
+#     Contents: 'myapp5.keystore'
+#     TargetFolder: OTTPro.Mobile
+
+
 - task: PublishBuildArtifacts@1
   inputs:
     pathToPublish: '$(build.artifactStagingDirectory)'
